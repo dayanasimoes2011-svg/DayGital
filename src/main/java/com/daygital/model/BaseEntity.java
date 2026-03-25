@@ -1,10 +1,10 @@
+package com.daygital.model;
+
 public class BaseEntity {
-    // Attributes
     private Long id;
     private String createdAt;
     private String updatedAt;
 
-    // Methods
     public Long getId() {
         return id;
     }
@@ -27,5 +27,10 @@ public class BaseEntity {
 
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    @Override
+    public String toString() {
+        return "BaseEntity{id=" + id + ", createdAt='" + createdAt + "', updatedAt='" + updatedAt + "'}";
     }
 }
