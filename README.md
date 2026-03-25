@@ -1,36 +1,37 @@
-# 🌐 DAYGITAL
+# 🌐 DAYGITAL - Auditoria & Compliance
 
 ## 📌 Objetivo
-Projeto acadêmico para implementação de um sistema com **IA**, arquitetura **MVC** e auditoria de logs reais.
+Sistema acadêmico desenvolvido em JAVA para monitoramento de registros e auditoria de integridade de dados, utilizando o padrão de projeto MVC.
 
-## 🛠 Tecnologias
+## 🛠 Tecnologias e Arquitetura
 - ☕ Java  
 - 🖥️ MVC  
-- 🤖 Inteligência Artificial  
-- 📊 Relatórios e auditoria  
+- 🤖 Ambiente configurado para execução rápida via Replit (inclui run.sh).
 
-## 🚀 Funcionalidades
-- ✅ Classes de compliance  
-- ✅ Motor de IA para análise de dados  
-- ✅ Interface de relatórios  
-- ✅ Testes de auditoria com logs reais  
-- ✅ Relatórios semanais de sprint  
+## 🚀 Funcionalidades de Auditoria
+- ✅ Rastreabilidade: Registro automático de data de criação (creatATt) e última atualização (updatedAt).
+- ✅ Compliance: Verificação de integridade temporal (validação de cronologia de logs)
+- ✅ Motor de Relatórios: Geração de sumário de registros processados diretamente no console.
 
 ## 📂 Estrutura do Projeto
 DAYGITAL/
 ├── src/
-│    ├── model/
-│    ├── controller/
-│    └── view/
-├── docs/
-└── README.md
+│    ├── model/       #Entidades e 
+regras de negócio (BaseEntity)
+│    ├── controller/  # Lógica de
+controle de fluxo de dados
+│    └── view/        # Interface de
+saída ( Console)
+├── rush.sh           # Script de
+automação
+└── README.md         # Documentação
 
-Código
-
-## ▶️ Como executar
-1. Clone o repositório:
+## ▶️ Como executar no replit
+1. Certifique-se de que os arquivos estão na pasta src.
+2. No console do Replit, digite:
    ```bash
-   git clone https://github.com/seuusuario/DAYGITAL.git
+   chmod +x run.sh
+   ./run.sh
    ```
 Compile os arquivos:
 
@@ -42,17 +43,4 @@ Execute:
 ```bash
 java RelatorioController
 ```
-💻 Exemplo de Código
-```java
-import java.time.LocalDateTime;
-
-public class BaseEntity {
-    private Long id;
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
-    // getters e setters...
-}
-```
-        this.updatedAt = updatedAt;
-    }
-}
+O sistema utiliza a classe BaseEntity para garantir a padronização dos logs de auditoria com carimbos de tempos precisos, identificando riscos de fraude cronológica, validando se o tempo de atualização de um registro é coerente coma a realidade (Compliance Temporal).
